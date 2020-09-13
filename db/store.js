@@ -1,6 +1,6 @@
 const fs = require("fs");
 const util = require("util");
-const { v5: uuidv5 } = require('uuid');
+const { v5: uuidv4 } = require('uuid');
 const readFile = util.promisify(fs.readFile);
 const writeFile = util.promisify(fs.writeFile);
 
@@ -39,7 +39,7 @@ class Notes {
       throw new Error("Title and/or text need a value");
     }
 
-    const newNote = { title, text, id: uuidv5() };
+    const newNote = { title, text, id: uuidv4() };
     return this.returnNotes()
       .then((notes) => [...notes, newNote])
       .then((updatedNotes) => this.write(updatedNotes))
