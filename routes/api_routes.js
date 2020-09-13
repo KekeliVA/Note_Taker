@@ -21,7 +21,7 @@ router.post("/api/notes/:id", (req, res) => {
   .catch((error) => res.status(500).json(err));
 })
 
-router.post("/api/posts", (req, res) => {
+router.post("/posts", (req, res) => {
   notes.addNote()
   .then((notes) => res.json(notes))
   .catch((error) => { res.status(500).json(err)});
