@@ -10,7 +10,7 @@ router.get("/notes", (req, res) => {
 })
 
 router.delete("/api/notes/:id", (req, res) => {
-  notes.deleteNote() 
+  notes.deleteNote(req.body.id) 
   .then((notes) => res.json(notes))
   .catch((error) => res.status(500).json(err));
 })
