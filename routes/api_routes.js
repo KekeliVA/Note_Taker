@@ -20,4 +20,10 @@ router.post("/api/notes/:id", (req, res) => {
   .then((notes) => res.json(notes))
   .catch((error) => res.status(500).json(err));
 })
+
+router.post("/api/posts", (req, res) => {
+  notes.addNote()
+  .then((notes) => res.json(notes))
+  .catch((error) => { res.status(500).json(err)});
+})
 module.exports = router;

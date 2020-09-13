@@ -4,7 +4,7 @@ const path = require("path");
 
 // GET request for /notes, returning notes.html file
 router.get("/notes", (req, res) => {
-  res.sendFile(path.join(__dirname, "/public/notes.html"))
+  res.sendFile(path.join(__dirname, "../public/notes.html"))
 })
 
 module.exports = router;
